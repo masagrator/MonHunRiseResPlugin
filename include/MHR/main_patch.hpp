@@ -1,0 +1,1 @@
+void MHR_main();
