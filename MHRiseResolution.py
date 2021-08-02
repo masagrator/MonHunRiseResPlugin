@@ -31,8 +31,8 @@ Ratio_handheld = Height_handheld / 720
 Ratio_dock_byted = bytearray(struct.pack("!f", Ratio_dock))
 Ratio_handheld_byted = bytearray(struct.pack("!f", Ratio_handheld))
 
-Instructions_dock = b"MOVK x9, #0x%x%x, lsl#32; MOVK x9, #0x%x%x, lsl#48" % (Ratio_dock_byted[2], Ratio_dock_byted[3], Ratio_dock_byted[0], Ratio_dock_byted[1])
-Instructions_handheld = b"MOV x9, #0x%x%x0000" % (Ratio_handheld_byted[0], Ratio_handheld_byted[1])
+Instructions_dock = b"MOVK x9, #0x%02x%02x, lsl#32; MOVK x9, #0x%02x%02x, lsl#48" % (Ratio_dock_byted[2], Ratio_dock_byted[3], Ratio_dock_byted[0], Ratio_dock_byted[1])
+Instructions_handheld = b"MOV x9, #0x%02x%02x0000" % (Ratio_handheld_byted[0], Ratio_handheld_byted[1])
 
 ks = Ks(KS_ARCH_ARM64, KS_MODE_LITTLE_ENDIAN)
 encoding_dock, count_dock = ks.asm(Instructions_dock)
