@@ -8,7 +8,7 @@ If you want to change anything, you need to use "Patch.cmd".
 It is required to have `Windows`, `Python 3` and "keystone-engine" python library installed for it to work.
 
 ```cmd
-pip install keystone-engine
+pip3 install keystone-engine
 ```
 
 For other systems you need to manually compile nsnsotool</br>
