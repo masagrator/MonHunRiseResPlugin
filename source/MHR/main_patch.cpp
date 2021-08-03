@@ -20,8 +20,8 @@ bool memcmp_f (const unsigned char *s1, const unsigned char *s2, size_t count) {
     return true;
 }
 
-uint64_t getCodeSize() {
-        return (uint64_t)skyline::utils::getRegionAddress(skyline::utils::region::Rodata) - (uint64_t)skyline::utils::getRegionAddress(skyline::utils::region::Text);
+size_t getCodeSize() {
+        return (size_t)skyline::utils::getRegionAddress(skyline::utils::region::Rodata) - (size_t)skyline::utils::getRegionAddress(skyline::utils::region::Text);
 }
 
 /* You must provide full instructions in arrays of uint8_t.
@@ -30,7 +30,7 @@ or 0 if nothing have been found. */
 uintptr_t findTextCode(const uint8_t* code, size_t size) {
     if (size % 4 != 0) return 0;
     uintptr_t addr = (uintptr_t)skyline::utils::getRegionAddress(skyline::utils::region::Text);
-    uint64_t addr_size = getCodeSize();	
+    size_t addr_size = getCodeSize();	
     uintptr_t addr_start = addr;
     while (addr != addr_start + addr_size) {
         bool result = memcmp_f((const unsigned char*)addr, code, 4);
