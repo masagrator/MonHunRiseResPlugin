@@ -33,11 +33,8 @@ uintptr_t findTextCode(const uint8_t* code, size_t size) {
     size_t addr_size = getCodeSize();	
     uintptr_t addr_start = addr;
     while (addr != addr_start + addr_size) {
-        bool result = memcmp_f((const unsigned char*)addr, code, 4);
-        if (result) {
-            result = memcmp_f((const unsigned char*)addr, code, size);
-            if (result) return addr;
-        }
+        bool result = memcmp_f((const unsigned char*)addr, code, size);
+        if (result) return addr;
         addr += 4;
     }
     return 0;
