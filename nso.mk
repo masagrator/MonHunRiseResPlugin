@@ -39,7 +39,7 @@ CFLAGS	:=	-g -Ofast -flto -Wall -Wno-multichar -ffunction-sections \
 
 CFLAGS	+=	$(INCLUDE) -D__SWITCH__ -DNOLOG
 
-CXXFLAGS	:= $(CFLAGS) -std=gnu++17 -fpermissive -fno-rtti -fomit-frame-pointer -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables -enable-libstdcxx-allocator=new -fpermissive 
+CXXFLAGS	:= $(CFLAGS) -std=gnu++20 -fpermissive -fno-rtti -fomit-frame-pointer -fno-exceptions -fno-asynchronous-unwind-tables -fno-unwind-tables -enable-libstdcxx-allocator=new -fpermissive 
 
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS  =  -specs=../switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map),--version-script=$(TOPDIR)/exported.txt -Wl,-init=__custom_init -Wl,-fini=__custom_fini -Wl,--export-dynamic -nodefaultlibs
