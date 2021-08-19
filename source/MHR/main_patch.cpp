@@ -3,13 +3,13 @@
 #include "skyline/inlinehook/memcpy_controlled.hpp"
 
 //09 E8 A7 D2 69 66 C6 F2 69 E6 E7 F2 09 01 00 F9
-constexpr uint8_t code[16] =   {0x09, 0xE8, 0xA7, 0xD2, 			//mov x9, #0x3f400000
+constinit uint8_t code[16] =   {0x09, 0xE8, 0xA7, 0xD2, 			//mov x9, #0x3f400000
                                 0x69, 0x66, 0xC6, 0xF2, 			//movk x9, #0x3333, lsl #32
                                 0x69, 0xE6, 0xE7, 0xF2, 			//movk x9, #0x3f33, lsl #48
                                 0x09, 0x01, 0x00, 0xF9	 			//str x9, [x8]
                                 };
-constexpr uint8_t handheld_divider[4] = {0x09, 0xF0, 0xA7, 0xD2};		//mov x9, #0x3f800000
-constexpr uint8_t dock_divider[8] = {0x09, 0x00, 0xC0, 0xF2,			//movk x9, #0x0, lsl#32
+constinit uint8_t handheld_divider[4] = {0x09, 0xF0, 0xA7, 0xD2};		//mov x9, #0x3f800000
+constinit uint8_t dock_divider[8] = {0x09, 0x00, 0xC0, 0xF2,			//movk x9, #0x0, lsl#32
                                      0x09, 0xF0, 0xE7, 0xF2			//movk x9, #0x3f80, #lsl48
                                      };
 
