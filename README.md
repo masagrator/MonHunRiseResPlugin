@@ -1,6 +1,8 @@
 # MonHunRiseResPlugin
 Skyline plugin for Monster Hunter Rise to override resolution
 
+![GitHub all releases](https://img.shields.io/github/downloads/masagrator/MonHunRiseResPlugin/total)
+
 # End-user Usage
 In release there are files that by default are setting handheld resolution to 720p and docked to 1080p.
 
